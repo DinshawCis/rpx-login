@@ -1,0 +1,20 @@
+
+%br
+.row
+  .col-md-6.col-md-offset-3
+    .panel.panel-default
+      .panel-heading All Users
+
+      %table.table
+        %tr
+          %th Name
+          %th Profession
+          %th Image
+          %th
+
+        - @user_profiles.each do |user_profile|
+          %tr
+            %td= user_profile.name
+            %td= user_profile.profession
+            %td= image_tag user_profile.avatar_url(:small) if user_profile.avatar?
+            %td= link_to 'Show', user_profile

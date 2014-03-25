@@ -1,0 +1,26 @@
+= form_for(@user_profile) do |f|
+  - if @user_profile.errors.any?
+    #error_explanation
+      %h2
+        = pluralize(@user_profile.errors.count, "error")
+        prohibited this user_profile from being saved:
+      %ul
+        - @user_profile.errors.full_messages.each do |msg|
+          %li= msg
+  .field
+    = f.label :name
+    %br/
+    = f.text_field :name, :style=>"height:28px !important"
+  .field
+    = f.label :profession
+    %br/
+    = f.text_field :profession, :style=>"height:28px !important"
+  .field
+    = f.file_field :avatar
+    = f.hidden_field :avatar_cache
+  .field
+    = f.label :remote_avatar_url, "or image URL"
+    %br/
+    = f.text_field :remote_avatar_url, :style=>"height:28px !important"
+  .actions
+    = f.submit "save", :class=>"btn btn-primary"
