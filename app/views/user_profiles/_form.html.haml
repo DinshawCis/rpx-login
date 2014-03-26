@@ -16,11 +16,16 @@
     %br/
     = f.text_field :profession,:class=>"form-control"
   .field
+
     = f.file_field :avatar
-    = f.hidden_field :avatar_cache
+
   .field
     = f.label :remote_avatar_url, "or image URL"
     %br/
     = f.text_field :remote_avatar_url,:class=>"form-control"
+  .field
+    = image_tag(@user_profile.avatar_url(:thumb)) if @user_profile.avatar?
+    = f.check_box :remove_avatar
+    = f.label :remove_avatar
   .actions
     = f.submit "save", :class=>"btn btn-primary"

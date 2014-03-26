@@ -5,7 +5,7 @@
     = stylesheet_link_tag    "application", :media => "all"
     = javascript_include_tag "application"
     = csrf_meta_tags
-    %nav.navbar-inverse{role: "navigation"}
+    %nav.navbar-default{role: "navigation"}
       .container-fluid
         .navbar-header
           - if current_user.present?
@@ -62,5 +62,5 @@
     = yield
     = javascript_include_rpx(user_session_url)
     %br
-    %nav.navbar.navbar-inverse.navbar-fixed-bottom{role: "navigation"}
+    %nav.navbar.navbar-default.navbar-fixed-bottom{role: "navigation"}
       .container
