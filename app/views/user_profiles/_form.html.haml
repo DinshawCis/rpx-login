@@ -10,17 +10,17 @@
   .field
     = f.label :name
     %br/
-    = f.text_field :name, :style=>"height:28px !important"
+    = f.text_field :name ,:class=>"form-control"
   .field
     = f.label :profession
     %br/
-    = f.text_field :profession, :style=>"height:28px !important"
+    = f.text_field :profession,:class=>"form-control"
   .field
     = f.file_field :avatar
     = f.hidden_field :avatar_cache
   .field
     = f.label :remote_avatar_url, "or image URL"
     %br/
-    = f.text_field :remote_avatar_url, :style=>"height:28px !important"
+    = f.text_field :remote_avatar_url,:class=>"form-control"
   .actions
     = f.submit "save", :class=>"btn btn-primary"
