@@ -12,6 +12,6 @@
       %p
         %b Profession:
         = @user_profile.profession
-      = link_to 'Edit', edit_user_profile_path(@user_profile)
+      = link_to 'Edit', edit_user_profile_path(@user_profile),  :class=>"btn btn-primary"
       |
-      \#{link_to 'Back', user_profiles_path}
+      = link_to 'Back', user_profiles_path, :class=>"btn btn-primary"

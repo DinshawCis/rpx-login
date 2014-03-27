@@ -10,7 +10,13 @@ class UserProfilesController < ApplicationController
   # GET /user_profiles/1
   # GET /user_profiles/1.json
   def show
+
     @user_profile = UserProfile.find(params[:id])
+    respond_to do |format|
+      format.html
+      format.js
+      format.json { render json: @user_profile }
+    end
   end
 
   # GET /user_profiles/new
@@ -28,6 +34,11 @@ class UserProfilesController < ApplicationController
   # GET /user_profiles/1/edit
   def edit
     @user_profile = UserProfile.find(params[:id])
+    respond_to do |format|
+      format.html
+      format.js
+      format.json { render json: @user_profile }
+    end
   end
 
   # POST /user_profiles
@@ -49,6 +60,7 @@ class UserProfilesController < ApplicationController
   # PUT /user_profiles/1
   # PUT /user_profiles/1.json
   def update
+
     @user_profile = current_user.user_profile
 
     respond_to do |format|

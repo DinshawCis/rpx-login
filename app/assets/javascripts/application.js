@@ -14,4 +14,6 @@
 //= require jquery_ujs
 //= require twitter/bootstrap
 //= require bootstrap
+//= require bootstrap/modal
 //= require_tree .
+

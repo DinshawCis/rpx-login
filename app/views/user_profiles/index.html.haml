@@ -17,4 +17,10 @@
             %td= user_profile.name
             %td= user_profile.profession
             %td= image_tag user_profile.avatar_url(:small) if user_profile.avatar?
-            %td= link_to 'Show', user_profile
+            %td= link_to 'Show', user_profile,{ :remote => true, "data-target" => "#myModal", "data-toggle" => "modal"}
+
+            / %td= link_to 'Show', user_profile
+/ %button.btn.btn-primary.btn-lg{"data-target" => "#myModal", "data-toggle" => "modal"} Launch demo modal
+
+
+#myModal.modal.fade{"aria-hidden" => "true", "aria-labelledby" => "myModalLabel", role: "dialog", tabindex: "-1"}

@@ -1,0 +1,15 @@
+.container
+  %p#notice= notice
+  %p
+    = image_tag @user_profile.avatar_url(:thumb) if @user_profile.avatar?
+
+  %p
+    %b Name:
+    = @user_profile.name
+  %p
+    %b Profession:
+    = @user_profile.profession
+  = link_to 'Edit', edit_user_profile_path(@user_profile), :class=>"btn btn-primary"
+  |
+  / = link_to 'Back', user_profiles_path, :class=>"btn btn-warning"
+  %button.btn.btn-danger{"data-dismiss" => "modal", type: "button"} Close
